@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vanessa's Health Hub</title>
+<style>
+  /* Multi blue color scheme */
+  body {
+    font-family: Arial, sans-serif;
+    background: #e6f0fa;
+    color: #003366;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background: linear-gradient(90deg, #004080, #3366cc, #6699ff);
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-weight: normal;
+  }
+  nav {
+    background: #3366cc;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  h2 {
+    border-bottom: 3px solid #3366cc;
+    padding-bottom: 0.3rem;
+  }
+  /* Bio styling */
+  #bio {
+    background: #cce0ff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  /* Blog navigation */
+  #blog nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  #blog nav ul li {
+    background: #6699ff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+  }
+  #blog nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  #blog nav ul li a:hover {
+    text-decoration: underline;
+  }
+  /* Blog area */
+  #blog-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .post {
+    background: white;
+    border: 1px solid #99b3ff;
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    box-shadow: 1px 1px 10px rgba(51,102,204,0.25);
+  }
+  .post h3 {
+    margin-top: 0;
+    color: #003366;
+  }
+  .post time {
+    font-size: 0.85rem;
+    color: #336699;
+  }
+  .post p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  /* Contact form */
+  form {
+    background: #cce0ff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+  }
+  label {
+    display: block;
+    margin-top: 1.2rem;
+    font-weight: bold;
+  }
+  input, textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1px solid #6699ff;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  button {
+    margin-top: 1.8rem;
+    background: #004080;
+    color: white;
+    border: none;
+    padding: 0.9rem 1.8rem;
+    font-size: 1.15rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: #3366cc;
+  }
+  footer {
+    background: #004080;
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+  ul.resources-list {
+    list-style-type: disc;
+    padding-left: 1.8rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  ul.resources-list li {
+    margin-bottom: 0.8rem;
+  }
+  ul.resources-list a {
+    color: #003366;
+    text-decoration: none;
+  }
+  ul.resources-list a:hover {
+    text-decoration: underline;
+  }
+  /* FAQ styling */
+  #faq dl {
+    background: #cce0ff;
+    padding: 1.3rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  #faq dt {
+    font-weight: bold;
+    margin-top: 1.2rem;
+    cursor: default;
+    color: #004080;
+  }
+  #faq dd {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 600px) {
+    main {
+      padding: 0 1rem;
+    }
+    nav {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    form {
+      max-width: 100%;
+    }
+    #blog nav ul {
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Vanessa's Health Hub</h1>
+</header>
+
+<nav>
+  <a href="#bio">About</a>
+  <a href="#blog">Blog</a>
+  <a href="#resources">Resources</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+  <section id="bio">
+    <h2>About Vanessa</h2>
+    <p>Welcome to Vanessa's Health Hub! I'm Vanessa, an incoming college freshman passionate about educating the general public on medical technology and healthcare innovation. My goal is to make complex medical advancements easy to understand and accessible to everyone. Through this blog, I share insights about how modern tools—from advanced imaging techniques to artificial intelligence—are transforming patient care, improving diagnosis, and shaping the future of medicine.</p>
+    <p>As I begin my college journey, I’m excited to deepen my knowledge and share it here with readers who are curious about the rapidly evolving world of healthcare technology. Whether you’re a student, healthcare professional, or just interested in the latest medical trends, you’ll find thoughtful, research-backed articles and resources here.</p>
+  </section>
+
+  <section id="blog">
+    <h2>Latest Blog Posts</h2>
+    <nav>
+      <ul>
+        <li><a href="#post-ai-imaging">The Rise of AI in Medical Imaging</a></li>
+        <li><a href="#post-wearables">Wearable Health Tech: Monitoring Beyond the Clinic</a></li>
+      </ul>
+    </nav>
+    <div id="blog-posts">
+      <article id="post-ai-imaging" class="post">
+        <h3>The Rise of AI in Medical Imaging</h3>
+        <time datetime="2025-07-01">July 1, 2025</time>
+        <p>Artificial intelligence (AI) is revolutionizing medical imaging by assisting radiologists in detecting diseases faster and with greater accuracy. Advanced machine learning algorithms analyze X-rays, MRIs, and CT scans, identifying subtle patterns that might be missed by the human eye. This technology not only speeds up diagnosis but also reduces errors and enhances personalized treatment planning.</p>
+        <p>For example, AI tools can help detect early signs of cancer, cardiovascular conditions, and neurological disorders by highlighting suspicious areas for closer review. Hospitals worldwide are increasingly adopting AI-powered imaging software, leading to improved patient outcomes and more efficient workflows.</p>
+        <p>While AI holds tremendous promise, it’s important to balance technology with human expertise, ensuring ethical use, patient privacy, and rigorous validation of these tools. As AI continues to evolve, it will become an indispensable partner in the healthcare ecosystem.</p>
+      </article>
+
+      <article id="post-wearables" class="post">
+        <h3>Wearable Health Tech: Monitoring Beyond the Clinic</h3>
+        <time datetime="2025-06-15">June 15, 2025</time>
+        <p>Wearable health technology—such as smartwatches, fitness trackers, and biosensors—is transforming how people manage their health outside traditional medical settings. These devices continuously monitor vital signs like heart rate, blood oxygen levels, sleep quality, and physical activity, providing real-time data that can help detect early warning signs of illness.</p>
+        <p>For patients with chronic conditions like diabetes or hypertension, wearables offer a proactive approach by alerting users and healthcare providers to potential problems before they escalate. Additionally, these devices promote healthier lifestyles by motivating users to stay active and maintain better habits.</p>
+        <p>Many wearables now integrate AI to offer personalized insights and coaching, adapting recommendations based on user behavior. While privacy and data security are ongoing concerns, wearable tech continues to expand the possibilities for patient-centered care and remote monitoring.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="resources">
+    <h2>Resources</h2>
+    <ul class="resources-list">
+      <li><a href="https://medlineplus.gov/" target="_blank" rel="noopener noreferrer">MedlinePlus</a> — Trusted health information for the public</li>
+      <li><a href="https://www.nih.gov/" target="_blank" rel="noopener noreferrer">National Institutes of Health (NIH)</a> — Research & health news</li>
+      <li><a href="https://www.radiologyinfo.org/" target="_blank" rel="noopener noreferrer">RadiologyInfo.org</a> — Patient-friendly info about imaging</li>
+      <li><a href="https://www.medtechdive.com/" target="_blank" rel="noopener noreferrer">MedTech Dive</a> — Medical technology news</li>
+      <li><a href="https://www.healthcareitnews.com/" target="_blank" rel="noopener noreferrer">Healthcare IT News</a> — Healthcare technology news</li>
+      <li><a href="https://www.scientificamerican.com/" target="_blank" rel="noopener noreferrer">Scientific American</a> — Popular science articles</li>
+      <li><a href="https://techcrunch.com/tag/healthcare/" target="_blank" rel="noopener noreferrer">TechCrunch Health</a> — Healthcare tech news</li>
+      <li><a href="https://www.coursera.org/browse/health" target="_blank" rel="noopener noreferrer">Coursera Healthcare Courses</a> — Free and paid online courses</li>
+      <li><a href="https://www.edx.org/learn/medical-technology" target="_blank" rel="noopener noreferrer">edX Medical Technology Courses</a> — Online learning</li>
+      <li><a href="https://www.who.int/" target="_blank" rel="noopener noreferrer">World Health Organization (WHO)</a> — Global health information and data</li>
+      <li><a href="https://www.fda.gov/medical-devices" target="_blank" rel="noopener noreferrer">FDA Medical Devices</a> — Regulatory information on medical technologies</li>
+    </ul>
+  </section>
+
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <dl>
+      <dt>What topics do you cover on Vanessa's Health Hub?</dt>
+      <dd>We explore how modern medical technology, from imaging techniques to artificial intelligence and wearable devices, is transforming healthcare and patient care worldwide.</dd>
+
+      <dt>Who is Vanessa?</dt>
+      <dd>Vanessa is an incoming college freshman passionate about educating the general public on healthcare innovations and making medical technology accessible to all.</dd>
+
+      <dt>Can I suggest topics for your blog?</dt>
+      <dd>Absolutely! Feel free to contact Vanessa via the contact form with your ideas, questions, or suggestions.</dd>
+
+      <dt>How often do you post new articles?</dt>
+      <dd>New articles are published regularly, as Vanessa researches and learns about exciting advancements in medical technology and healthcare.</dd>
+
+      <dt>Is the information on this blog medically reviewed?</dt>
+      <dd>While Vanessa strives to share accurate, research-backed information, this blog is educational and not a substitute for professional medical advice. Always consult healthcare professionals for medical decisions.</dd>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Vanessa</h2>
+    <form id="contact-form" action="#" method="POST" onsubmit="return handleSubmit(event)">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+    <p id="form-response" style="color: green; margin-top: 1rem;"></p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Vanessa's Health Hub. All rights reserved.</p>
+</footer>
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const responseEl = document.getElementById('form-response');
+
+    // Simple form validation already handled by 'required' fields
+
+    // Simulate sending form data (since no backend)
+    setTimeout(() => {
+      responseEl.textContent = 'Thank you, ' + form.name.value + '! Your message has been received.';
+      form.reset();
+    }, 600);
+
+    return false;
+  }
+</script>
+
+</body>
+</html>
